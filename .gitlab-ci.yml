@@ -1,0 +1,28 @@
+image: base:v1
+before_script:
+  - apt-get update -yq
+  - apt-get install -y curl
+
+stages:
+  - build
+
+build_job:
+  stage: build
+  script:
+    - curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+    - apt-get install -y nodejs
+    - node -v
+    - npm config set registry https://registry.npm.taobao.org
+    - npm i -g npm
+    - npm -v
+    - npm i
+    - npm run build
+    - sudo apt-get -y install python-pip python-dev build-essential
+    - sudo pip install --upgrade pip
+    - pip install paramiko
+    - echo $CI_BUILD_REF
+    - python development.py $CI_BUILD_REF
+  only:
+    - production
+  tags:
+    - docker
