@@ -4,7 +4,9 @@
     <Search v-bind:choose="choose"></Search>
   </section>
   <section class="page-content">
-
+    <div class="title">
+      <h1>没有你找不到的资源, 如果有, 那也没办法!!</h1>
+    </div>
   </section>
 </template>
 
@@ -47,7 +49,15 @@
     .page-content {
       background-color: #e8eded;
       background-attachment: fixed;
-      min-height: 2000px;
+
+      .title {
+        height: 150px;
+        text-align: center;
+         h1 {
+            padding-top: 50px;
+         }
+      }
+
     }
 }
 </style>
