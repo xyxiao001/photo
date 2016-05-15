@@ -3,6 +3,9 @@
   <section class="show">
     <Search v-bind:choose="choose"></Search>
   </section>
+  <section class="page-content">
+
+  </section>
 </template>
 
 <style lang="scss">
@@ -40,10 +43,18 @@
     .hide>a>i {
       visibility: hidden;
     }
+
+    .page-content {
+      background-color: #e8eded;
+      background-attachment: fixed;
+      min-height: 2000px;
+    }
 }
 </style>
 
 <script>
+  // 导入图片
+  import show from 'src/assets/show.jpg'
   // 导入模块
   import Navbar from 'Navbar'
   import $ from 'jquery'
@@ -60,6 +71,8 @@
       Search
     },
     ready () {
+      // 非要绑定才能出图片
+      this.show = show
       // 绑定this
       const that = this
 
@@ -89,10 +102,10 @@
           $('.search').width('900px')
           $('.option').css('top', window.scrollY + 100)
           $('.option').width('900px')
-        } else if (window.scrollY <= 302) {
+        } else if (window.scrollY <= 310) {
           $('.search').width('900px')
           $('.option').width('900px')
-        } else if (window.scrollY > 315) {
+        } else if (window.scrollY < 700) {
           $('.search').width('100%')
           $('.search').css('top', window.scrollY - 100)
           $('.option').width('100%')
