@@ -130,6 +130,7 @@
     transition: all 0.3s ease-out;
     opacity: 0.9;
     overflow: hidden;
+    z-index: 9999;
 
     ul.show-item {
       width: 20%;

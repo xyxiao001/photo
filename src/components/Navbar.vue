@@ -78,6 +78,7 @@
        position: absolute;
        text-align: center;
        width: 100%;
+       min-width: 1024px;
 
        a {
          display: block;
