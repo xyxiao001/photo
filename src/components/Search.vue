@@ -8,7 +8,7 @@
         <input
           type="text"
           v-model="input"
-          placeholder="找到完美的照片, 视频和更多…">
+          :placeholder="placeholder">
         <i class="fa fa-times fa-2x"></i>
       </div>
       <div class="select">
@@ -19,17 +19,17 @@
     </section>
     <section class="option">
       <ul class="show-item">
-        <li>
+        <li class="hide">
           <a><i class="fa fa-check"></i>图片</a>
         </li>
         <li class="hide">
-          <a><i class="fa fa-check"></i>插画</a>
+          <a><i class="fa fa-check"></i>表情包</a>
         </li>
         <li class="hide">
           <a><i class="fa fa-check"></i>视频</a>
         </li>
         <li class="hide">
-          <a><i class="fa fa-check"></i>音乐</a>
+          <a><i class="fa fa-check"></i>图标</a>
         </li>
       </ul>
     </section>
@@ -128,7 +128,7 @@
     height: 250px;
     display: block;
     position: relative;
-    top: 100px;
+    top: 150px;
     transition: all 0.3s ease-out;
     opacity: 0.9;
     overflow: hidden;
@@ -179,7 +179,7 @@
         input: ''
       }
     },
-    props: ['choose'],
+    props: ['placeholder', 'choose'],
     watch: {
       input () {
         if (this.input.length > 0) {
@@ -213,6 +213,33 @@
         that.input = ''
         $(this).hide()
       })
+
+      // 右边的选择
+      $('.select').click(function () {
+        if ($('.show-item').height() > 0) {
+          $('.show-item').height('0')
+          $(this).find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down')
+        } else {
+          $(this).find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up')
+          $('.show-item').height('230px')
+        }
+      })
+
+      $('.show-item>li').click(function () {
+        $(this).removeClass('hide')
+        .siblings().addClass('hide')
+        $('.select').find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down')
+        that.choose = $(this).children('a').text()
+        $('.show-item').height('0')
+      })
+
+      // 默认选中
+      var li = document.querySelectorAll('.show-item li a')
+      for (var i = 0; i < li.length; i++) {
+        if (li[i].text === that.choose) {
+          li[i].parentNode.setAttribute('class', '')
+        }
+      }
     }
   }
 </script>

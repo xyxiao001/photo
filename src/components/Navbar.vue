@@ -3,12 +3,12 @@
     <nav class="left">
       <ul>
         <li v-for="menu in menus">
-          <a>{{menu}}</a>
+          <a v-link="{name: menu.link}">{{menu.name}}</a>
         </li>
       </ul>
     </nav>
     <section id="logo">
-      <a class="logo" v-link="{name: Dashboard}">摄影爱好者 <span>图片聚集地！</span></a>
+      <a class="logo" v-link="{name: 'Dashboard', exact: true}">摄影爱好者 <span>图片聚集地！</span></a>
     </section>
     <nav class="right">
       <ul>
@@ -31,6 +31,10 @@
      color: #b4b9b9;
      transition: all 0.3s ease-out;
      overflow: hidden;
+
+     nav a.active {
+       color: #84e900;
+     }
 
      nav.left {
        padding: 0;
@@ -118,7 +122,24 @@
   export default {
     data () {
       return {
-        menus: ['照片', '插画', '视频', '音乐']
+        menus: [
+          {
+            name: '照片',
+            link: 'Photo'
+          },
+          {
+            name: '表情包',
+            link: 'Biao'
+          },
+          {
+            name: '视频',
+            link: 'Video'
+          },
+          {
+            name: '图标',
+            link: 'Icon'
+          }
+        ]
       }
     }
   }

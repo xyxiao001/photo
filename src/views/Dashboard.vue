@@ -1,7 +1,7 @@
 <template>
   <Navbar></Navbar>
   <section class="show">
-    <Search v-bind:choose="choose"></Search>
+    <Search :placeholder="placeholder" choose="图片"></Search>
   </section>
   <section class="page-content">
     <div class="title">
@@ -118,7 +118,6 @@
     margin: 0;
     padding: 0;
     min-width: 1024px;
-    min-height: 1200px;
 
     .show {
       width: auto;
@@ -136,7 +135,7 @@
       cursor: pointer;
     }
 
-    a:hover {
+    a:hover, a:focus, a:link {
       text-decoration: none;
     }
 
@@ -152,6 +151,7 @@
     .page-content {
       background-color: #e8eded;
       background-attachment: fixed;
+      min-height: 500px;
 
       .title {
         height: 150px;
@@ -259,7 +259,7 @@
   export default {
     data () {
       return {
-        choose: '图片',
+        placeholder: '找到完美的照片, 视频和更多…',
         photo1: {
           url: One,
           id: '#877245',
@@ -340,45 +340,25 @@
       Video
     },
     ready () {
-      // 绑定this
-      const that = this
-
-      // 右边的选择
-      $('.select').click(function () {
-        if ($('.show-item').height() > 0) {
-          $('.show-item').height('0')
-          $(this).find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down')
-        } else {
-          $(this).find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up')
-          $('.show-item').height('230px')
-        }
-      })
-
-      $('.show-item>li').click(function () {
-        $(this).removeClass('hide')
-        .siblings().addClass('hide')
-        $('.select').find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down')
-        that.choose = $(this).children('a').text()
-        $('.show-item').height('0')
-      })
-
       // 滚动条事件
-      $(document).scroll(function () {
-        if (window.scrollY < 120) {
-          $('.search').css('top', window.scrollY + 150)
-          $('.search').width('900px')
-          $('.option').css('top', window.scrollY + 150)
-          $('.option').width('900px')
-        } else if (window.scrollY <= 310) {
-          $('.search').width('900px')
-          $('.option').width('900px')
-        } else if (window.scrollY < 500) {
-          $('.search').width('100%')
-          $('.search').css('top', window.scrollY - 90)
-          $('.option').width('100%')
-          $('.option').css('top', window.scrollY - 90)
-        }
-      })
+      if (this.$route.name === 'Dashboard') {
+        $(document).scroll(function () {
+          if (window.scrollY < 120) {
+            $('.search').css('top', window.scrollY + 150)
+            $('.search').width('900px')
+            $('.option').css('top', window.scrollY + 150)
+            $('.option').width('900px')
+          } else if (window.scrollY <= 310) {
+            $('.search').width('900px')
+            $('.option').width('900px')
+          } else if (window.scrollY < 500) {
+            $('.search').width('100%')
+            $('.search').css('top', window.scrollY - 90)
+            $('.option').width('100%')
+            $('.option').css('top', window.scrollY - 90)
+          }
+        })
+      }
     }
   }
 </script>
