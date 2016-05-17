@@ -340,9 +340,10 @@
       Video
     },
     ready () {
+      const that = this
       // 滚动条事件
-      if (this.$route.name === 'Dashboard') {
-        $(document).scroll(function () {
+      $(document).scroll(function () {
+        if (that.$route.name === 'Dashboard') {
           if (window.scrollY < 120) {
             $('.search').css('top', window.scrollY + 150)
             $('.search').width('900px')
@@ -357,8 +358,8 @@
             $('.option').width('100%')
             $('.option').css('top', window.scrollY - 90)
           }
-        })
-      }
+        }
+      })
     }
   }
 </script>
