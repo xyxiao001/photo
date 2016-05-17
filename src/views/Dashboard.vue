@@ -352,7 +352,7 @@
           } else if (window.scrollY <= 310) {
             $('.search').width('900px')
             $('.option').width('900px')
-          } else if (window.scrollY < 500) {
+          } else if (window.scrollY < 520) {
             $('.search').width('100%')
             $('.search').css('top', window.scrollY - 90)
             $('.option').width('100%')

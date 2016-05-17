@@ -125,7 +125,7 @@
   .option {
     margin: auto;
     width: 900px;
-    height: 250px;
+    height: 0px;
     display: block;
     position: relative;
     top: 150px;
@@ -136,7 +136,7 @@
 
     ul.show-item {
       width: 20%;
-      height: 0;
+      height: 100%;
       margin-left: 80%;
       padding-left: 0;
       background-color: white;
@@ -232,12 +232,12 @@
 
       // 右边的选择
       $('.select').click(function () {
-        if ($('.show-item').height() > 0) {
-          $('.show-item').height('0')
+        if ($('.option').height() > 0) {
+          $('.option').height('0')
           $(this).find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down')
         } else {
           $(this).find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up')
-          $('.show-item').height('230px')
+          $('.option').height('230px')
         }
       })
 
@@ -246,7 +246,7 @@
         .siblings().addClass('hide')
         $('.select').find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down')
         that.choose = $(this).children('a').text()
-        $('.show-item').height('0')
+        $('.option').height('0')
       })
 
       // 默认选中

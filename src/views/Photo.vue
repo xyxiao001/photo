@@ -2,6 +2,7 @@
   <Navbar></Navbar>
   <section class="page-content">
     <Search :placeholder="placeholder" choose="图片"></Search>
+    <WaterFall></Waterfall>
   </section>
   <foot></foot>
 </template>
@@ -9,8 +10,8 @@
 <style lang="scss">
   section.page-content {
     .searchDiv {
+      position: relative;
       width: 100%;
-      height: 322px;
 
       .search {
         width: 100%;
@@ -18,10 +19,18 @@
       }
 
       .option {
-        width: 100%;
+        width: 20%;
+        float: right;
+        z-index: 999;
         top: 0;
+
+        ul {
+          float: right;
+          width: 100%;
+        }
       }
     }
+
   }
 </style>
 
@@ -30,6 +39,7 @@
   import Navbar from 'Navbar'
   import Foot from 'Footer'
   import Search from 'Search'
+  import Waterfall from 'Waterfall'
 
   export default {
     data () {
@@ -40,7 +50,8 @@
     components: {
       Navbar,
       Foot,
-      Search
+      Search,
+      Waterfall
     }
   }
 </script>
