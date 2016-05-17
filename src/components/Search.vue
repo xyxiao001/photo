@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="searchDiv">
     <section class="search">
       <div class="icon">
         <i class="fa fa-search fa-2x" v-on:click="startSearch"></i>
@@ -40,7 +40,7 @@
   .search {
     width: 900px;
     height: 72px;
-    top: 100px;
+    top: 150px;
     position: relative;
     background-color: white;
     margin: auto;
@@ -120,10 +120,12 @@
     }
   }
 
+
+
   .option {
     margin: auto;
     width: 900px;
-    height: 200px;
+    height: 250px;
     display: block;
     position: relative;
     top: 100px;

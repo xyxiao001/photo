@@ -25,10 +25,12 @@
 
 <style lang="scss">
    section.menu {
+     width: 100%;
      height: 85px;
      background-color: #0c0d0d;
      color: #b4b9b9;
      transition: all 0.3s ease-out;
+     overflow: hidden;
 
      nav.left {
        padding: 0;

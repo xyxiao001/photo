@@ -350,7 +350,7 @@
           $(this).find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down')
         } else {
           $(this).find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up')
-          $('.show-item').height('200px')
+          $('.show-item').height('230px')
         }
       })
 
@@ -365,18 +365,18 @@
       // 滚动条事件
       $(document).scroll(function () {
         if (window.scrollY < 120) {
-          $('.search').css('top', window.scrollY + 100)
+          $('.search').css('top', window.scrollY + 150)
           $('.search').width('900px')
-          $('.option').css('top', window.scrollY + 100)
+          $('.option').css('top', window.scrollY + 150)
           $('.option').width('900px')
         } else if (window.scrollY <= 310) {
           $('.search').width('900px')
           $('.option').width('900px')
         } else if (window.scrollY < 500) {
           $('.search').width('100%')
-          $('.search').css('top', window.scrollY - 100)
+          $('.search').css('top', window.scrollY - 90)
           $('.option').width('100%')
-          $('.option').css('top', window.scrollY - 100)
+          $('.option').css('top', window.scrollY - 90)
         }
       })
     }
