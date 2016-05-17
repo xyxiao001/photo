@@ -20,7 +20,7 @@
   export default {
     data () {
       return {
-        placeholder: '搜什么呢 (*@ο@*) 哇～'
+        placeholder: '搜什么视频呢 (*@ο@*) 哇～'
       }
     },
     components: {

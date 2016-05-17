@@ -33,9 +33,11 @@
     methods: {
       start () {
         this.$el.childNodes[1].play()
+        this.$el.childNodes[1].setAttribute('controls', 'controls')
       },
       stop () {
         this.$el.childNodes[1].pause()
+        this.$el.childNodes[1].removeAttribute('controls')
       }
     }
   }

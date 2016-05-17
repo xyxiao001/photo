@@ -151,7 +151,7 @@
     .page-content {
       background-color: #e8eded;
       background-attachment: fixed;
-      min-height: 500px;
+      min-height: 600px;
 
       .title {
         height: 150px;

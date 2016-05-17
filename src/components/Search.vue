@@ -187,6 +187,22 @@
         } else {
           $('.searchBar i').hide()
         }
+      },
+      choose () {
+        switch (this.choose) {
+          case '图片':
+            this.placeholder = 'hi ! 想找到什么图片'
+            break
+          case '表情包':
+            this.placeholder = '搞笑的表情包给我来一打！！ ☺'
+            break
+          case '视频':
+            this.placeholder = '搜什么视频呢 (*@ο@*) 哇～'
+            break
+          case '图标':
+            this.placeholder = '什么图标呢  O(∩_∩)O~~'
+            break
+        }
       }
     },
     methods: {
