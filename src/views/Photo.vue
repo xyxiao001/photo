@@ -4,7 +4,7 @@
     <Search :placeholder="placeholder" choose="图片"></Search>
     <WaterFall :imgs="imgs"></Waterfall>
   </section>
-  <foot></foot>
+  <Top></Top>
 </template>
 
 <style lang="scss">
@@ -38,9 +38,9 @@
 <script>
   // 导入模块
   import Navbar from 'Navbar'
-  import Foot from 'Footer'
   import Search from 'Search'
   import Waterfall from 'Waterfall'
+  import Top from 'Top'
 
   import One from '../assets/photo1.jpg'
   import Two from '../assets/photo2.jpg'
@@ -77,9 +77,9 @@
     },
     components: {
       Navbar,
-      Foot,
       Search,
-      Waterfall
+      Waterfall,
+      Top
     }
   }
 </script>
