@@ -18,6 +18,10 @@
     padding-left: 20px;
   }
 
+  .show-photo {
+    min-height: 600px;
+  }
+
   @media screen and (max-width: 1250px)  {
     .waterfall {
       padding-left: 0;
