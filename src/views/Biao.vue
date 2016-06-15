@@ -37,6 +37,7 @@
   import Search from 'Search'
   import Waterfall from 'Waterfall'
   import Top from 'Top'
+  import $ from 'jquery'
 
   export default {
     data () {
@@ -73,6 +74,29 @@
       Search,
       Waterfall,
       Top
+    },
+    ready () {
+      const that = this
+      var loading = false
+      $(document).scroll(function () {
+        const biao = that.biaos
+        if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+          if (loading === false) {
+            loading = true
+            setTimeout(function () {
+              const arr = []
+              for (var i = 0; i < 20; i++) {
+                const f = parseInt(Math.random() * biao.length)
+                arr.push(
+                  {src: biao[f].src, title: biao[f].title}
+                )
+              }
+              that.biaos = biao.concat(arr)
+            }, 1500)
+            loading = false
+          }
+        }
+      })
     }
   }
 </script>
