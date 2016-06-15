@@ -13,13 +13,13 @@ npm run build
 ```
 
 # 首页
-### [http://7xvdom.com1.z0.glb.clouddn.com/index.png]
+### http://7xvdom.com1.z0.glb.clouddn.com/index.png
 ![首页](http://7xvdom.com1.z0.glb.clouddn.com/index.png)
 
 #图片列表页
-### [http://7xvdom.com1.z0.glb.clouddn.com/biao.png)]
+### http://7xvdom.com1.z0.glb.clouddn.com/biao.png
 ![图片列表页](http://7xvdom.com1.z0.glb.clouddn.com/biao.png)
 
 #操作
-### [(http://7xvdom.com1.z0.glb.clouddn.com/show.gif)]
-![gif]
+### http://7xvdom.com1.z0.glb.clouddn.com/show.gif
+![gif](http://7xvdom.com1.z0.glb.clouddn.com/show.gif)
