@@ -41,6 +41,7 @@
   import Search from 'Search'
   import Waterfall from 'Waterfall'
   import Top from 'Top'
+  import $ from 'jquery'
 
   import One from '../assets/photo1.jpg'
   import Two from '../assets/photo2.jpg'
@@ -80,6 +81,29 @@
       Search,
       Waterfall,
       Top
+    },
+    ready () {
+      const that = this
+      var loading = false
+      $(document).scroll(function () {
+        const img = that.imgs
+        if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+          if (loading === false) {
+            loading = true
+            setTimeout(function () {
+              const arr = []
+              for (var i = 0; i < 20; i++) {
+                const f = parseInt(Math.random() * img.length)
+                arr.push(
+                  {src: img[f].src, title: img[f].title}
+                )
+              }
+              that.imgs = img.concat(arr)
+            }, 1500)
+            loading = false
+          }
+        }
+      })
     }
   }
 </script>

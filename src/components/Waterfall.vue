@@ -96,39 +96,7 @@
 </style>
 
 <script>
-  import $ from 'jquery'
   export default {
-    props: ['imgs'],
-    methods: {
-      showMore () {
-        for (var i = 0; i < 20; i++) {
-          var f = parseInt(Math.random() * this.imgs.length - 1)
-          var div = document.createElement('div')
-          div.className = 'd-photo'
-          var img = document.createElement('img')
-          img.src = this.imgs[f].src
-          var a = document.createElement('a')
-          a.innerHTML = this.imgs[f].title
-          div.appendChild(img)
-          div.appendChild(a)
-          document.getElementsByClassName('show-photo')[0].appendChild(div)
-        }
-      }
-    },
-    ready () {
-      const that = this
-      var loading = false
-      $(document).scroll(function () {
-        if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
-          if (loading === false) {
-            loading = true
-            setTimeout(function () {
-              that.showMore()
-            }, 2000)
-            loading = false
-          }
-        }
-      })
-    }
+    props: ['imgs']
   }
 </script>
