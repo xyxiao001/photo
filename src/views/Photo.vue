@@ -53,7 +53,11 @@
       return {
         placeholder: 'hi ! 想找到什么图片',
         imgs: [
-          {src: One, title: '体验VR, 炫酷的体验'},
+          {
+            id: 1,
+            src: One,
+            title: '体验VR, 炫酷的体验'
+          },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ceugbpm7bb2-SxDi3dsmcMpqusqvmAvL9QUqMWCX1RL-5qJY',
             title: '好萌，好萌的'
