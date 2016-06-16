@@ -10,13 +10,23 @@
     <section id="logo">
       <a class="logo" v-link="{name: 'Dashboard', exact: true}">摄影爱好者 <span>图片聚集地！</span></a>
     </section>
-    <nav class="right">
+    <nav class="right" v-if="this.login === true">
       <ul>
         <li>
           <a>注册</a>
         </li>
         <li>
-          <a>登陆</a>
+          <a  v-link="{name: 'Login'}">登陆</a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="right" v-if="this.login === false">
+      <ul>
+        <li>
+          <a v-on:click="logOut">退出登录</a>
+        </li>
+        <li>
+          <a>好男孩</a>
         </li>
       </ul>
     </nav>
@@ -33,7 +43,7 @@
      overflow: hidden;
 
      nav a.active {
-       color: #84e900;
+       color: #84e900 !important;
      }
 
      nav.left {
@@ -119,6 +129,7 @@
 
 
 <script>
+  import { getToken, removeToken } from '../token'
   export default {
     data () {
       return {
@@ -139,8 +150,22 @@
             name: '图标',
             link: 'Icon'
           }
-        ]
+        ],
+        login: false
       }
+    },
+    computed: {
+      login () {
+        return !getToken()
+      }
+    },
+    methods: {
+      logOut () {
+        removeToken()
+        this.$router.go('/login')
+      }
+    },
+    ready () {
     }
   }
 </script>

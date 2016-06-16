@@ -6,6 +6,7 @@ import Photo from 'Photo'
 import Video from 'Video'
 import Biao from 'Biao'
 import Icon from 'Icon'
+import Login from 'Login'
 
 Vue.use(VueRouter)
 
@@ -18,6 +19,10 @@ router.map({
   '/': {
     name: 'Dashboard',
     component: Dashboard
+  },
+  '/login': {
+    name: 'Login',
+    component: Login
   },
   '/photo': {
     name: 'Photo',
