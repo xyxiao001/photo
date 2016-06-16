@@ -1,7 +1,7 @@
 
 ## 摄影网站建设
 
-### [网站地址](xyxiao.mom)
+### [网站地址](http://xyxiao.mom)
 
 ``` bash
 # 安装依赖包
