@@ -237,6 +237,18 @@
       }
     }
 }
+
+@media screen and (max-width: 900px) {
+  section.show {
+    width: 100%;
+    height: 260px;
+    background-image: url('../assets/show.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
 </style>
 
 <script>
@@ -342,7 +354,7 @@
       const that = this
       // 滚动条事件
       $(document).scroll(function () {
-        if (that.$route.name === 'Dashboard') {
+        if (that.$route.name === 'Dashboard' && document.body.clientWidth > 800) {
           if (window.scrollY < 120) {
             $('.search').css('top', window.scrollY + 150)
             $('.search').width('900px')

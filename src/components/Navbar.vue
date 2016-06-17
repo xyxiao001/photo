@@ -136,7 +136,7 @@
      }
    }
 
-   @media screen and(max-width: 900px) {
+   @media screen and(max-width: 968px) {
      section.menu {
        width: 100%;
        height: auto;
