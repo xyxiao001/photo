@@ -32,6 +32,9 @@
     h5 {
       color: black;
       padding: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space:nowrap;
     }
 
     .photo-img{

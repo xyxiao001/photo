@@ -34,32 +34,32 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row categories">
           <div class="all-categories">
             <h3>全部类别</h2>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <ul>
               <li v-for="category in category1">
                 <a>{{category.name}}</a>
               </li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <ul>
               <li v-for="category in category2">
                 <a>{{category.name}}</a>
               </li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <ul>
               <li v-for="category in category3">
                 <a>{{category.name}}</a>
               </li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <ul>
               <li v-for="category in category4">
                 <a>{{category.name}}</a>
@@ -99,18 +99,18 @@
         </div>
       </div>
     </div>
-    <div class="video">
+    <section class="video">
       <div class="container">
         <h4>观看免费视频</h4>
         <div class="row">
-          <div class="col-md-4" v-for="video in videos">
+          <div class="col-md-4 col-sm-12" v-for="video in videos">
             <Video v-bind:video="video"></Video>
           </div>
         </div>
       </div>
-    </div>
-    <Foot></Foot>
+    </secyion>
   </section>
+  <Foot></Foot>
 </template>
 
 <style lang="scss">
@@ -161,8 +161,6 @@
       }
 
       .see {
-        // min-width: 1024px;
-        min-height: 650px;
         text-align: center;
 
         .video .photo-show {
@@ -177,13 +175,17 @@
           }
         }
 
-        .all-categories {
-          margin-top: 30px;
+        div.categories {
 
-          h3 {
-            margin-bottom: 40px;
+          .all-categories {
+            margin-top: 30px;
+
+            h3 {
+              margin-bottom: 40px;
+            }
           }
         }
+
         ul li {
           height: 25px;
 
@@ -200,14 +202,13 @@
       }
 
       .slogan {
-        // min-width: 1024px;
-        height: 404px;
         background-color: #dce1e1;
 
         img {
           width: 100%;
           height: 100%;
-          margin-top: 40px;
+          margin-top: 20px;
+          margin-bottom: 20px;
         }
 
         .slogan-text {
@@ -238,6 +239,12 @@
     }
   }
 
+  @media screen and (max-width: 968px) {
+    section.page-content>section.video {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 900px) {
     section.show {
       width: 100%;
@@ -260,6 +267,58 @@
           margin-bottom: 10px;
           font-size: 30px;
           line-height: 40px;
+        }
+      }
+
+      div.slogan {
+
+        .slogan-text {
+           margin-top: 30px;
+
+           h4 {
+             text-align: left ;
+             margin-bottom: 20px;
+           }
+
+           p {
+             padding: 0;
+             text-align: left;
+             margin-bottom: 10px;
+           }
+        }
+      }
+
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    section.page-content > div.see {
+      .video .photo-show {
+        height: 305px;
+
+        .photo-item {
+          height: 305px;
+
+          .photo-img {
+            height: 85%;
+          }
+        }
+      }
+    }
+
+    .categories {
+      margin-top: 100px;
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    div.categories {
+      .col-sm-6 {
+        float: left;
+        width: 50%;
+
+        ul {
+          padding-left: 0;
         }
       }
     }
