@@ -168,7 +168,7 @@
     }
   }
 
-  @media screen and (max-width: 820px) {
+  @media screen and (max-width: 850px) {
     .searchDiv {
       -webkit-overflow-scrolling: touch;
       .search {
