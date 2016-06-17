@@ -161,7 +161,7 @@
       }
 
       .see {
-        min-width: 1024px;
+        // min-width: 1024px;
         min-height: 650px;
         text-align: center;
 
@@ -200,7 +200,7 @@
       }
 
       .slogan {
-        min-width: 1024px;
+        // min-width: 1024px;
         height: 404px;
         background-color: #dce1e1;
 
