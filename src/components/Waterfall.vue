@@ -3,7 +3,7 @@
     <div class="show-photo">
       <div class="d-photo" v-for="img in imgs">
         <img v-bind:src="img.src">
-        <a>{{img.title}}</a>
+        <a v-link="{ name: this.$route.name + 'Detail', params: {id: img.id }}">{{img.title}}</a>
       </div>
     </div>
     <div class="show-more">
