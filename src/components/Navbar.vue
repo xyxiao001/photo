@@ -168,9 +168,11 @@
        .drop {
          position: relative;
          width: 100%;
-         height: 0;
+         height: 1px;
          overflow: hidden;
-         transition: height 0.45s ease;
+         -webkit-overflow-scrolling: touch;
+         transition: height 0.5s ease;
+         -webkit-transform:transition3d/translateZ;
 
          nav.left, nav.right {
            width: 100%;
@@ -248,7 +250,7 @@
         const drop = document.querySelector('.drop')
         if (this.drops) {
           this.drops = false
-          drop.style.height = '0px'
+          drop.style.height = '1px'
         } else {
           this.drops = true
           drop.style.height = '350px'
