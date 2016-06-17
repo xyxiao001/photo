@@ -117,7 +117,6 @@
   body {
     margin: 0;
     padding: 0;
-    min-width: 1024px;
 
     .show {
       width: auto;
