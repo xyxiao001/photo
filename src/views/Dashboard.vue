@@ -446,6 +446,8 @@
         } else if (that.$route.name === 'Dashboard' && document.body.clientWidth < 850) {
           $('.search').width('100%')
           $('.search').css('top', 0)
+          $('.option').css('width', 'auto')
+          $('.option').css('top', 0)
         }
       })
     }

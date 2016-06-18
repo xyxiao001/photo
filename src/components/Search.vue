@@ -122,7 +122,7 @@
 
   .option {
     margin: auto;
-    width: 900px;
+    width: 800px;
     height: 0px;
     display: block;
     position: relative;
