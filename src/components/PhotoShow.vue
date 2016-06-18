@@ -32,6 +32,9 @@
     h5 {
       color: black;
       padding: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space:nowrap;
     }
 
     .photo-img{
@@ -71,8 +74,8 @@
     }
 
     .photo-item:hover  img{
-      width: 96%;
-      height: 96%;
+      width: 90%;
+      height: 94%;
       opacity: 0.8;
     }
   }

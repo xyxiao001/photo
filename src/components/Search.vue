@@ -38,7 +38,7 @@
 
 <style lang="scss">
   .search {
-    width: 900px;
+    width: 800px;
     height: 72px;
     top: 150px;
     position: relative;
@@ -120,8 +120,6 @@
     }
   }
 
-
-
   .option {
     margin: auto;
     width: 900px;
@@ -166,6 +164,56 @@
            padding-right: 10px;
            color: #02a388;
          }
+      }
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .searchDiv {
+      -webkit-overflow-scrolling: touch;
+      .search {
+        width: 100%;
+        height: 60px;
+        top: 0;
+        position: relative;
+        background-color: white;
+        margin: auto;
+        overflow: hidden;
+        transition: all 0.3s ease-out;
+        opacity: 0.9;
+
+        .icon {
+          width: 10%;
+          i {
+            padding-top: 15px;
+          }
+        }
+
+        .searchBar {
+          width: 90%;
+          input {
+            font-size: 20px;
+          }
+        }
+
+        .select {
+          display: none;
+        }
+      }
+      .option {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 440px) {
+    .searchDiv {
+      .search {
+        .icon {
+          width: 15%;
+        }
+        .searchBar {
+          width: 85%;
+        }
       }
     }
   }

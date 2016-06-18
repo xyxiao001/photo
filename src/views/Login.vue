@@ -36,7 +36,6 @@
 
 <style lang="scss">
   .login {
-    min-height: 500px;
 
     .loginBg {
       background-image: url('../assets/login.jpg');
@@ -108,6 +107,21 @@
     color: red;
     font-size: 13px;
     padding-top: 10px;
+  }
+
+  /*手把手写兼容手机端*/
+  @media screen and (max-width: 440px){
+    .login {
+      .loginBox {
+        position: absolute;
+        height: 320px;
+        width: 80%;
+        top: 70px;
+        left: 230px;
+        background: white;
+        box-shadow:2px 3px 11px #333333;
+      }
+    }
   }
 </style>
 

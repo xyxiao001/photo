@@ -7,6 +7,8 @@ import Video from 'Video'
 import Biao from 'Biao'
 import Icon from 'Icon'
 import Login from 'Login'
+import PhotoDetail from 'PhotoDetail'
+import BiaoDetail from 'BiaoDetail'
 
 Vue.use(VueRouter)
 
@@ -28,9 +30,17 @@ router.map({
     name: 'Photo',
     component: Photo
   },
+  '/photo/:id': {
+    name: 'PhotoDetail',
+    component: PhotoDetail
+  },
   '/biao': {
     name: 'Biao',
     component: Biao
+  },
+  '/biao/:id': {
+    name: 'BiaoDetail',
+    component: BiaoDetail
   },
   '/video': {
     name: 'Video',
