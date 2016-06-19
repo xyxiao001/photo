@@ -213,6 +213,13 @@
         }
         .searchBar {
           width: 85%;
+
+          .fa-times {
+            float: right;
+            font-size: 26px;
+            margin-top: 10px;
+            padding-right: 5px;
+          }
         }
       }
     }
