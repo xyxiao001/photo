@@ -18,16 +18,6 @@
     padding-left: 20px;
   }
 
-  .show-photo {
-    min-height: 600px;
-  }
-
-  @media screen and (max-width: 1250px)  {
-    .waterfall {
-      padding-left: 0;
-    }
-  }
-
   .d-photo {
     display: inline-block;
     width: 18%;
@@ -92,6 +82,27 @@
       }
     }
 
+  }
+
+
+  @media screen and (max-width: 1060px)  {
+    .waterfall {
+      width: 100%;
+      padding: 0;
+      margin: auto;
+
+      .d-photo {
+        width: 30%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 620px)  {
+    .waterfall {
+      .d-photo {
+        width: 45%;
+      }
+    }
   }
 </style>
 
