@@ -10,7 +10,9 @@
           </div>
         </div>
         <div class="col-md-4">
-          <button class="btn btn-primary" v-on:click="down">下载</button>
+          <div class="download">
+            <button class="btn btn-primary" v-on:click="down">下载</button>
+          </div>
         </div>
       </div>
     </div>
@@ -35,6 +37,29 @@
 
     .down {
       display: none;
+    }
+  }
+
+  @media screen and(max-width: 1000px) {
+    section.detail {
+      .imgBox {
+        width: 100%;
+
+        img {
+          position: relative;
+          width: 100%;
+          padding: 10px;
+        }
+      }
+
+      .download {
+        display: block;
+
+        .btn-primary {
+          margin-top: 0;
+          margin-left: 40%;
+        }
+      }
     }
   }
 </style>
