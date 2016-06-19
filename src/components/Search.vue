@@ -122,7 +122,7 @@
 
   .option {
     margin: auto;
-    width: 900px;
+    width: 800px;
     height: 0px;
     display: block;
     position: relative;
@@ -213,6 +213,13 @@
         }
         .searchBar {
           width: 85%;
+
+          .fa-times {
+            float: right;
+            font-size: 26px;
+            margin-top: 10px;
+            padding-right: 5px;
+          }
         }
       }
     }
