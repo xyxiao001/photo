@@ -16,6 +16,10 @@
   .waterfall {
     padding-right: 20px;
     padding-left: 20px;
+
+    div.show-photo {
+      min-height: 600px;
+    }
   }
 
   .d-photo {
@@ -101,6 +105,14 @@
     .waterfall {
       .d-photo {
         width: 45%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 420px)  {
+    .waterfall {
+      .d-photo {
+        width: 95%;
       }
     }
   }
