@@ -4,8 +4,8 @@
     <div class="loginBox">
       <section class="title">
         <a class="logo" v-link="{name: 'Dashboard'}">
-          摄影爱好者
-          <span>图片聚集地！</span>
+          图片聚集地
+          <span>免费图片！</span>
         </a>
       </section>
       <section>
