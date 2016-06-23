@@ -54,10 +54,10 @@ app.use(hotMiddleware)
 // serve pure static assets
 app.use('/static', express.static('./static'))
 
-module.exports = app.listen(80, function (err) {
+module.exports = app.listen(8081, function (err) {
   if (err) {
     console.log(err)
     return
   }
-  console.log('Listening at http://localhost:80')
+  console.log('Listening at http://localhost:8081')
 })
