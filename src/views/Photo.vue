@@ -49,7 +49,7 @@
         placeholder: 'hi ! 想找到什么图片',
         page: 1,
         imgs: [],
-        url: 'https://api.unsplash.com/photos/?client_id=fc1ad074b94abad2fa784ab7740425e91b4ec8db73473371fa36aaa88e866658&page='
+        url: 'https://api.unsplash.com/photos/?client_id=80f66654628683dc7a20a3f2b44a93f8a9f0afaa41be7c7c392c5648dc6bb035&page='
       }
     },
     components: {

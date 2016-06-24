@@ -15,7 +15,6 @@
     .show-more {
       display: none;
     }
-
     .loading {
       position: relative;
       height: 200px;
@@ -57,7 +56,7 @@
       return {
         imgs: [],
         placeholder: '输入关键词搜索, 目前只支持英文',
-        url: 'https://api.unsplash.com/photos/search?client_id=fc1ad074b94abad2fa784ab7740425e91b4ec8db73473371fa36aaa88e866658&query='
+        url: 'https://api.unsplash.com/photos/search?client_id=80f66654628683dc7a20a3f2b44a93f8a9f0afaa41be7c7c392c5648dc6bb035&query='
       }
     },
     components: {
@@ -75,6 +74,7 @@
         if (search.length > 0) {
           that.imgs = search
           $('.loading').html('成功, 关键词:' + that.$route.query.text)
+          $('.show-more').show()
         } else {
           $('.loading').html('失败, 关键词:' + that.$route.query.text)
         }
