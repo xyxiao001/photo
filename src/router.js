@@ -10,6 +10,7 @@ import Login from 'Login'
 import PhotoDetail from 'PhotoDetail'
 import BiaoDetail from 'BiaoDetail'
 import Register from 'Register'
+import Search from 'SearchDetail'
 
 Vue.use(VueRouter)
 
@@ -54,6 +55,10 @@ router.map({
   '/register': {
     name: 'Register',
     component: Register
+  },
+  '/search': {
+    name: 'Search',
+    component: Search
   }
 })
 

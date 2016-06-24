@@ -1,0 +1,84 @@
+<template>
+  <Navbar></Navbar>
+  <section class="page-content searchDetail">
+    <div class="loading">
+      <p class="loadingSearch"><i class="fa fa-repeat fa-3x" aria-hidden="true"></i></p>
+      <p>搜索中。。。。。</p>
+    </div>
+    <Photo-List :imgs="imgs"></PhotoList>
+  </section>
+  <Top></Top>
+</template>
+
+<style lang="scss">
+  section.searchDetail {
+    .show-more {
+      display: none;
+    }
+
+    .loading {
+      position: relative;
+      height: 200px;
+      width: 300px;
+      left : 53%;
+      top : 30%;
+      padding-top: 100px;
+      margin-left : -150px; /*一半的高度*/
+      font-size: 30px;
+      text-align: center;
+
+      .loadingSearch {
+        margin-left: -50px;
+        i {
+          animation: search 0.3s infinite;
+          padding: 5px;
+          @keyframes search {
+            0%   {transform: rotate(0deg);}
+            25%  {transform: rotate(90deg);}
+            50%  {transform: rotate(180deg);}
+            75%  {transform: rotate(270deg);}
+            100% {transform: rotate(360deg);}
+          }
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  // 导入模块
+  import Navbar from 'Navbar'
+  import PhotoList from 'PhotoList'
+  import Top from 'Top'
+  import $ from 'jquery'
+
+  export default {
+    data () {
+      return {
+        imgs: [],
+        placeholder: '输入关键词搜索, 目前只支持英文',
+        url: 'https://api.unsplash.com/photos/search?client_id=fc1ad074b94abad2fa784ab7740425e91b4ec8db73473371fa36aaa88e866658&query='
+      }
+    },
+    components: {
+      Navbar,
+      PhotoList,
+      Top
+    },
+    ready () {
+      const that = this
+      const search = []
+      $.get(that.url + that.$route.query.text, function (data) {
+        for (var i = 0; i < data.length; i++) {
+          search.push(data[i])
+        }
+        if (search.length > 0) {
+          that.imgs = search
+          $('.loading').html('成功, 关键词:' + that.$route.query.text)
+        } else {
+          $('.loading').html('失败, 关键词:' + that.$route.query.text)
+        }
+      })
+    }
+  }
+</script>

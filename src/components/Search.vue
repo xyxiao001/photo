@@ -263,8 +263,7 @@
     methods: {
       startSearch () {
         if (this.input !== '') {
-          console.log('开始搜索...')
-          console.log(this.input)
+          this.$router.go('/search?text=' + this.input)
         }
       }
     },
