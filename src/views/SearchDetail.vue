@@ -1,6 +1,7 @@
 <template>
   <Navbar></Navbar>
   <section class="page-content searchDetail">
+    <Search :placeholder="placeholder" choose="图片"></Search>
     <div class="loading">
       <p class="loadingSearch"><i class="fa fa-repeat fa-3x" aria-hidden="true"></i></p>
       <p>搜索中。。。。。</p>
@@ -50,6 +51,7 @@
   import PhotoList from 'PhotoList'
   import Top from 'Top'
   import $ from 'jquery'
+  import Search from 'Search'
 
   export default {
     data () {
@@ -62,23 +64,30 @@
     components: {
       Navbar,
       PhotoList,
-      Top
+      Top,
+      Search
     },
-    ready () {
-      const that = this
-      const search = []
-      $.get(that.url + that.$route.query.text, function (data) {
-        for (var i = 0; i < data.length; i++) {
-          search.push(data[i])
-        }
-        if (search.length > 0) {
-          that.imgs = search
-          $('.loading').html('成功, 关键词:' + that.$route.query.text)
-          $('.show-more').show()
-        } else {
-          $('.loading').html('失败, 关键词:' + that.$route.query.text)
-        }
-      })
+    methods: {
+      searching () {
+        const that = this
+        const search = []
+        $.get(that.url + that.$route.query.text, function (data) {
+          for (var i = 0; i < data.length; i++) {
+            search.push(data[i])
+          }
+          if (search.length > 0) {
+            that.imgs = search
+            $('.loading').html('成功, 关键词:' + that.$route.query.text)
+          } else {
+            $('.loading').html('失败, 关键词:' + that.$route.query.text)
+          }
+        })
+      }
+    },
+    route: {
+      data () {
+        this.searching()
+      }
     }
   }
 </script>
