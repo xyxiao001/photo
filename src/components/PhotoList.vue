@@ -3,7 +3,11 @@
     <div class="show-photo">
       <div class="d-photo" v-for="img in imgs">
         <img v-bind:src="img.urls.small">
-        <a v-link="{ name: 'PhotoDetail', params: {id: img.id }}">{{img.title}}</a>
+        <a v-link="{ name: 'PhotoDetail', params: {id: img.id }}">
+          <span>提供者: {{img.user.name}}</span>
+          <span>时间: {{img.created_at}}</span>
+          <span>喜欢人数: {{img.likes}}</span>
+        </a>
       </div>
     </div>
     <div class="show-more">
@@ -18,7 +22,7 @@
     padding-left: 20px;
   }
 
-  .d-photo {
+  .show-photo > .d-photo {
     display: inline-block;
     width: 18%;
     height: 180px;
@@ -42,16 +46,24 @@
       color: black;
       transition: all 0.3s ease-out;
 
+      span {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap;
+      }
     }
-  }
 
-  .d-photo:hover img{
-    opacity: 0.3;
-  }
+    &:hover img{
+      opacity: 0.5;
+    }
 
-  .d-photo:hover a {
-    opacity: 1;
-    padding-left: 50px;
+    &:hover a {
+      opacity: 1;
+      padding-left: 10px;
+      padding-top: 10px;
+    }
   }
 
   .show-more {
