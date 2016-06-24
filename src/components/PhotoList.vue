@@ -57,7 +57,7 @@
   .show-more {
     width: 100%;
     height: 50px;
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
 
     a {
