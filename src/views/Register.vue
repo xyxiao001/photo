@@ -85,9 +85,10 @@
     methods: {
       register (event) {
         event.preventDefault()
-        if (this.password1 !== this.password2) {
+        if (this.password !== this.password2) {
           this.error = '两次密码不一致!'
-          this.password2 = ''
+        } else {
+          this.error = '注册失败, 还没做注册'
         }
       },
       clear () {
