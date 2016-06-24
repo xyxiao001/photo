@@ -2,7 +2,7 @@
   <Navbar></Navbar>
   <section class="page-content">
     <Search :placeholder="placeholder" choose="图片"></Search>
-    <WaterFall :imgs="imgs"></Waterfall>
+    <Photo-List :imgs="imgs"></PhotoList>
   </section>
   <Top></Top>
 </template>
@@ -39,71 +39,48 @@
   // 导入模块
   import Navbar from 'Navbar'
   import Search from 'Search'
-  import Waterfall from 'Waterfall'
+  import PhotoList from 'PhotoList'
   import Top from 'Top'
   import $ from 'jquery'
-
-  import One from '../assets/photo1.jpg'
-  import Two from '../assets/photo2.jpg'
-  import Three from '../assets/photo3.jpg'
-  import Four from '../assets/photo4.jpg'
 
   export default {
     data () {
       return {
         placeholder: 'hi ! 想找到什么图片',
-        imgs: [
-          {
-            id: 1,
-            src: One,
-            title: '体验VR, 炫酷的体验'
-          },
-          {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ceugbpm7bb2-SxDi3dsmcMpqusqvmAvL9QUqMWCX1RL-5qJY',
-            title: '好萌，好萌的'
-          },
-          {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXQ118ASvPuMDxDOIL9dAq5MSjx71eX0YCFsd8ijxEwpMqTooz',
-            title: '这是谁 好想知道'
-          },
-          {src: Two, title: '纹理， 还不错哟'},
-          {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPmHRdfF5bMyxS6K-ZawTItxqRZyW5ery3e1rSAjFkzqkhnNz8Cw',
-            title: '美丽的晚霞'
-          },
-          {
-            src: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS3sVVUtnTDrv0lObNUy6AG6iILM2qo4lhEr7yMkqirEQfFDh28',
-            title: '埃菲尔铁塔'
-          },
-          {src: Three, title: '大灰狼和小红帽的故事'},
-          {src: Four, title: '拿着iPad学习的'}
-        ]
+        page: 1,
+        imgs: [],
+        url: 'https://api.unsplash.com/photos/?client_id=fc1ad074b94abad2fa784ab7740425e91b4ec8db73473371fa36aaa88e866658&page='
       }
     },
     components: {
       Navbar,
       Search,
-      Waterfall,
+      PhotoList,
       Top
     },
     ready () {
+      const first = []
+      $.get(this.url + this.page, function (data) {
+        for (var i = 0; i < data.length; i++) {
+          first.push(data[i])
+        }
+      })
+      this.imgs = first
       const that = this
       var loading = false
       $(document).scroll(function () {
         const img = that.imgs
-        if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+        if ($(window).scrollTop() + $(window).height() >= $(document).height() && that.imgs.length >= 1) {
           if (loading === false) {
             loading = true
-            setTimeout(function () {
-              const arr = []
-              for (var i = 0; i < 20; i++) {
-                const f = parseInt(Math.random() * img.length)
-                arr.push(
-                  {src: img[f].src, title: img[f].title}
-                )
+            that.page += 1
+            const photolist = []
+            $.get(that.url + that.page, function (data) {
+              for (var j = 0; j < data.length; j++) {
+                photolist.push(data[j])
               }
-              that.imgs = img.concat(arr)
-            }, 1500)
+              that.imgs = img.concat(photolist)
+            })
             loading = false
           }
         }

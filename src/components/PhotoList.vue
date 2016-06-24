@@ -2,7 +2,7 @@
   <div class="waterfall">
     <div class="show-photo">
       <div class="d-photo" v-for="img in imgs">
-        <img v-bind:src="img.src">
+        <img v-bind:src="img.urls.small">
         <a v-link="{ name: this.$route.name + 'Detail', params: {id: img.id }}">{{img.title}}</a>
       </div>
     </div>
@@ -57,6 +57,7 @@
   .show-more {
     width: 100%;
     height: 50px;
+    margin-top: 50px;
     text-align: center;
 
     a {

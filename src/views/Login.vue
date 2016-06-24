@@ -56,7 +56,7 @@
 
     .loginBox {
       position: absolute;
-      height: 360px;
+      height: 370px;
       width: 400px;
       left : 50%;
       top : 20%;
