@@ -26,8 +26,12 @@
               v-on:focus="clear"
               placeholder="密码 测试 1234">
           </div>
-          <button type="submit" class="btn btn-primary" v-on:click="login">登录</button>
           <p class="error">{{error}}</p>
+          <button type="submit" class="btn btn-primary" v-on:click="login">登录</button>
+          <div class="other">
+            <a class="goLogin" v-link="{name: 'Register'}">注册</a>
+            <a class="forget">忘记密码?</a>
+          </div>
         </form>
       </section>
     </div>
@@ -52,7 +56,7 @@
 
     .loginBox {
       position: absolute;
-      height: 350px;
+      height: 360px;
       width: 400px;
       left : 50%;
       top : 20%;
@@ -114,7 +118,7 @@
     .login {
       .loginBox {
         position: absolute;
-        height: 320px;
+        height: 360px;
         width: 80%;
         top: 70px;
         left: 230px;

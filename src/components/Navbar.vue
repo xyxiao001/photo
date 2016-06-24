@@ -15,10 +15,10 @@
       <nav class="right" v-if="this.login === true">
         <ul>
           <li>
-            <a  v-link="{name: 'Login'}">登陆</a>
+            <a v-link="{name: 'Login'}">登陆</a>
           </li>
           <li>
-            <a>注册</a>
+            <a v-link="{name: 'Register'}">注册</a>
           </li>
         </ul>
       </nav>

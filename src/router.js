@@ -9,6 +9,7 @@ import Icon from 'Icon'
 import Login from 'Login'
 import PhotoDetail from 'PhotoDetail'
 import BiaoDetail from 'BiaoDetail'
+import Register from 'Register'
 
 Vue.use(VueRouter)
 
@@ -49,6 +50,10 @@ router.map({
   '/icon': {
     name: 'Icon',
     component: Icon
+  },
+  '/register': {
+    name: 'Register',
+    component: Register
   }
 })
 
