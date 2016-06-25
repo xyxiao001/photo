@@ -206,6 +206,18 @@
        }
      }
    }
+
+    @media screen and(max-width: 420px) {
+      section.menu > #logo {
+        a.logo:hover {
+          opacity: 1;
+        }
+
+        a.logo:hover span{
+          opacity: 0.9;
+        }
+      }
+    }
 </style>
 
 

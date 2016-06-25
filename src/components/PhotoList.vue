@@ -40,7 +40,7 @@
       position: relative;
       top: -180px;
       display: inline-block;
-      height: 230px;
+      height: 100%;
       width: 100%;
       opacity: 0;
       color: black;
@@ -122,6 +122,34 @@
     .waterfall {
       .d-photo {
         width: 95%;
+      }
+    }
+
+    .show-photo > .d-photo {
+      height: 260px;
+      a {
+        position: relative;
+        display: inline-block;
+        top: -260px;
+        height: 260px;
+        width: 100%;
+        opacity: 0;
+        color: black;
+      }
+      a span{
+        display: none;
+      }
+
+      img {
+        height: 100%;
+      }
+
+      &:hover img {
+        opacity: 1;
+      }
+
+      &:hover a span{
+        display: none;
       }
     }
   }

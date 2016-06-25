@@ -46,7 +46,6 @@
         }
       }
     }
-
   }
   .search-more {
     width: 100%;
@@ -74,6 +73,15 @@
           75%  {transform: rotate(270deg);}
           100% {transform: rotate(360deg);}
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    section.searchDetail {
+      .loading {
+        width: 100%;
+        margin-right: 0;
       }
     }
   }

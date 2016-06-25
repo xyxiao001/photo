@@ -79,6 +79,20 @@
       opacity: 0.8;
     }
   }
+
+  @media screen and (max-width: 420px) {
+    .photo-show {
+      a.photo-id:hover span{
+        color: #02a388;
+      }
+
+      .photo-item:hover  img{
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+      }
+    }
+  }
 </style>
 
 <script>
