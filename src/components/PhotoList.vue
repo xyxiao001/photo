@@ -20,6 +20,10 @@
   .waterfall {
     padding-right: 20px;
     padding-left: 20px;
+
+    .show-photo {
+      min-height: 600px;
+    }
   }
 
   .show-photo > .d-photo {
