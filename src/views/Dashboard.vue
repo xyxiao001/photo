@@ -41,21 +41,27 @@
           <div class="col-md-3 col-sm-6">
             <ul>
               <li v-for="category in category1">
-                <a>{{category.name}}</a>
+                <a v-link="{name: category.page, query: {text: category.url}}">
+                  {{category.name}}
+                </a>
               </li>
             </ul>
           </div>
           <div class="col-md-3 col-sm-6">
             <ul>
               <li v-for="category in category2">
-                <a>{{category.name}}</a>
+                <a v-link="{name: category.page, query: {text: category.url}}">
+                  {{category.name}}
+                </a>
               </li>
             </ul>
           </div>
           <div class="col-md-3 col-sm-6">
             <ul>
               <li v-for="category in category3">
-                <a>{{category.name}}</a>
+                <a v-link="{name: category.page, query: {text: category.url}}">
+                  {{category.name}}
+                </a>
               </li>
             </ul>
           </div>
@@ -371,24 +377,24 @@
           title: '观看4K极致清晰视频'
         },
         category1: [
-          {id: 1, name: '表情包', url: ''},
-          {id: 2, name: '壁纸', url: ''},
-          {id: 3, name: '图标', url: ''},
-          {id: 4, name: '风景', url: ''},
-          {id: 5, name: '人文景观', url: ''}
+          {id: 1, name: '表情包', url: 'biao', page: 'Biao'},
+          {id: 2, name: '壁纸', url: 'wallpaper', page: 'Search'},
+          {id: 3, name: '图标', url: 'icon', page: 'Search'},
+          {id: 4, name: '风景', url: 'scenery', page: 'Search'},
+          {id: 5, name: '人文景观', url: 'attractions', page: 'Search'}
         ],
         category2: [
-          {id: 1, name: '家人', url: ''},
-          {id: 2, name: '自然', url: ''},
-          {id: 3, name: '动物照片', url: ''},
-          {id: 4, name: '老式', url: ''},
-          {id: 5, name: '背景', url: ''}
+          {id: 1, name: '家人', url: 'family', page: 'Search'},
+          {id: 2, name: '自然', url: 'natural', page: 'Search'},
+          {id: 3, name: '动物照片', url: 'animal', page: 'Search'},
+          {id: 4, name: '老式', url: 'old', page: 'Search'},
+          {id: 5, name: '背景', url: 'background', page: 'Search'}
         ],
         category3: [
-          {id: 1, name: '食品', url: ''},
-          {id: 2, name: '体育', url: ''},
-          {id: 3, name: '娱乐', url: ''},
-          {id: 4, name: '动物', url: ''},
+          {id: 1, name: '食品', url: 'food', page: 'Search'},
+          {id: 2, name: '体育', url: 'movement', page: 'Search'},
+          {id: 3, name: '娱乐', url: 'entertainment', page: 'Search'},
+          {id: 4, name: '中国', url: 'china', page: 'Search'},
           {id: 5, name: '美女视频', url: ''}
         ],
         category4: [
