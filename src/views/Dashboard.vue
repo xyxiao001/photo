@@ -327,10 +327,6 @@
 
 <script>
   // 暂时先试用保存在本地的图片
-  import One from '../assets/photo1.jpg'
-  import Two from '../assets/photo2.jpg'
-  import Three from '../assets/photo3.jpg'
-  import Four from '../assets/photo4.jpg'
   import VideoJpg from '../assets/video.jpg'
 
   // 导入模块
@@ -346,24 +342,28 @@
       return {
         placeholder: '找到完美的照片, 视频和更多…',
         photo1: {
-          url: One,
-          id: '#877245',
-          title: '体验VR'
+          url: 'https://images.unsplash.com/photo-1422190726583-404c3fded337?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=4a3e3d4a537328b71fdcd89ff42b7c9e',
+          category: 'girl',
+          id: '9dIHG8pXuW8',
+          title: '世界各地美女'
         },
         photo2: {
-          url: Two,
-          id: '#877246',
-          title: '基本背景和纹理'
+          url: 'https://images.unsplash.com/photo-1414146782248-462e06300dbf?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=1b7e1c7185ec52c919536b5a899354fe',
+          category: 'scenery',
+          id: 'o0RZkkL072U',
+          title: '风景图片'
         },
         photo3: {
-          url: Three,
-          id: '#877247',
-          title: '童话'
+          url: 'https://images.unsplash.com/photo-1457734933360-81bb2e6ed002?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=b7138b7d749da07cc3583be67631213d',
+          category: 'movie',
+          id: 'VUDJjCRXbHQ',
+          title: '电影'
         },
         photo4: {
-          url: Four,
-          id: '#877248',
-          title: '使用ipad学习'
+          url: 'https://images.unsplash.com/photo-1453219562534-36e2ce0ea18e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=8208cfcbcf9b89123e2ff4940deac67e',
+          category: 'study',
+          id: 'H8s0PF2rcQs',
+          title: '学习'
         },
         videoImage: {
           url: VideoJpg,

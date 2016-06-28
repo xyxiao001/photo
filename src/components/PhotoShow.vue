@@ -1,12 +1,12 @@
 <template>
   <div class="photo-show">
-    <a class="photo-item">
+    <a class="photo-item" v-link="{name: 'Search', query: {text: photo.category}}">
       <div class="photo-img">
         <img v-bind:src="photo.url">
       </div>
       <h5>{{photo.title}}</h5>
     </a>
-    <a class="photo-id">
+    <a class="photo-id" v-link="{ name: 'PhotoDetail', params: {id: photo.id }}">
       <i class="fa fa-camera"></i>
       <span>{{photo.id}}</span>
     </a>

@@ -22,7 +22,7 @@
     padding-left: 20px;
 
     .show-photo {
-      min-height: 600px;
+      // min-height: 600px;
     }
   }
 
