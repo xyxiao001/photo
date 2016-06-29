@@ -103,7 +103,7 @@
         page: 1,
         searchMore: false,
         placeholder: '输入关键词搜索, 目前只支持英文',
-        url: 'https://api.unsplash.com/photos/search?client_id=80f66654628683dc7a20a3f2b44a93f8a9f0afaa41be7c7c392c5648dc6bb035&query='
+        url: 'https://pixabay.com/api/?key=2831718-1f9b7c1b490ec182487b38a60&lang=zh&image_type=photo&webformatURL=_320&q='
       }
     },
     components: {
@@ -119,17 +119,16 @@
         const search = [].concat(this.imgs)
         this.searchMore = false
         $.get(that.url + that.$route.query.text + '&page=' + that.page, function (data) {
-          for (var i = 0; i < data.length; i++) {
-            search.push(data[i])
+          for (var i = 0; i < data.hits.length; i++) {
+            search.push(data.hits[i])
           }
           if (search.length > 0) {
             that.imgs = search
             $('.loading').html('成功, 关键词:' + that.$route.query.text)
-            if (search.length >= 10 * that.page) {
+            if (search.length >= 20 * that.page) {
               that.searchMore = true
             }
           } else {
-            that.imgs = search
             $('.loading').html('失败, 关键词:' + that.$route.query.text)
           }
         })

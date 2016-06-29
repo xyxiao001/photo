@@ -49,7 +49,7 @@
         placeholder: 'hi ! 想找到什么图片',
         page: 1,
         imgs: [],
-        url: 'https://api.unsplash.com/photos/?client_id=80f66654628683dc7a20a3f2b44a93f8a9f0afaa41be7c7c392c5648dc6bb035&page='
+        url: 'https://pixabay.com/api/?key=2831718-1f9b7c1b490ec182487b38a60&lang=zh&image_type=photo&page='
       }
     },
     components: {
@@ -59,14 +59,10 @@
       Top
     },
     ready () {
-      const first = []
-      $.get(this.url + this.page, function (data) {
-        for (var i = 0; i < data.length; i++) {
-          first.push(data[i])
-        }
-      })
-      this.imgs = first
       const that = this
+      $.get(this.url + this.page, function (data) {
+        that.imgs = data.hits
+      })
       var loading = false
       $(document).scroll(function () {
         const img = that.imgs
@@ -76,8 +72,8 @@
             that.page += 1
             const photolist = []
             $.get(that.url + that.page, function (data) {
-              for (var j = 0; j < data.length; j++) {
-                photolist.push(data[j])
+              for (var j = 0; j < data.hits.length; j++) {
+                photolist.push(data.hits[j])
               }
               that.imgs = img.concat(photolist)
             })

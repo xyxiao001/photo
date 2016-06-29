@@ -2,11 +2,12 @@
   <div class="waterfall">
     <div class="show-photo">
       <div class="d-photo" v-for="img in imgs">
-        <img v-bind:src="img.urls.small">
+        <img v-bind:src="img.webformatURL">
         <a v-link="{ name: 'PhotoDetail', params: {id: img.id }}">
-          <span>提供者: {{img.user.name}}</span>
-          <span>时间: {{img.created_at}}</span>
+          <span>提供者: {{img.user}}</span>
+          <span>标签: {{img.tags}}</span>
           <span>喜欢人数: {{img.likes}}</span>
+          <span>下载次数: {{img.downloads}}</span>
         </a>
       </div>
     </div>

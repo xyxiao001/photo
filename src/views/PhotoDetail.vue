@@ -13,7 +13,7 @@
     </div>
     <div class="down">
       <nav>
-        <a v-bind:href="downloads" target="_blank">
+        <a v-bind:href="downloads">
           下载
         </a>
       </nav>
@@ -134,10 +134,10 @@
     route: {
       data () {
         const that = this
-        $.get('https://api.unsplash.com/photos/' + that.$route.params.id + '?client_id=fc1ad074b94abad2fa784ab7740425e91b4ec8db73473371fa36aaa88e866658', function (data) {
+        $.get('https://pixabay.com/api/?key=2831718-1f9b7c1b490ec182487b38a60&lang=zh&image_type=photo&id=' + that.$route.params.id, function (data) {
           $('.loading').show()
-          $('.photos').css('background-image', 'url(' + data.urls.regular + ')')
-          that.downloads = data.links.download
+          $('.photos').css('background-image', 'url(' + data.hits[0].webformatURL + ')')
+          that.downloads = data.hits[0].webformatURL + '?attachment'
         })
       }
     }
