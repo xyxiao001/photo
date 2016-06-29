@@ -102,7 +102,7 @@
         imgs: [],
         page: 1,
         searchMore: false,
-        placeholder: '输入关键词搜索, 目前只支持英文',
+        placeholder: '输入关键词搜索',
         url: 'https://pixabay.com/api/?key=2831718-1f9b7c1b490ec182487b38a60&lang=zh&image_type=photo&webformatURL=_320&q='
       }
     },

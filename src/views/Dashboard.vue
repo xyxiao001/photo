@@ -347,30 +347,11 @@
     data () {
       return {
         placeholder: '找到完美的照片, 视频和更多…',
-        photo1: {
-          url: 'https://images.unsplash.com/photo-1422190726583-404c3fded337?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=4a3e3d4a537328b71fdcd89ff42b7c9e',
-          category: 'girl',
-          id: '9dIHG8pXuW8',
-          title: '世界各地美女'
-        },
-        photo2: {
-          url: 'https://images.unsplash.com/photo-1414146782248-462e06300dbf?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=1b7e1c7185ec52c919536b5a899354fe',
-          category: 'scenery',
-          id: 'o0RZkkL072U',
-          title: '风景图片'
-        },
-        photo3: {
-          url: 'https://images.unsplash.com/photo-1457734933360-81bb2e6ed002?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=b7138b7d749da07cc3583be67631213d',
-          category: 'movie',
-          id: 'VUDJjCRXbHQ',
-          title: '电影'
-        },
-        photo4: {
-          url: 'https://images.unsplash.com/photo-1453219562534-36e2ce0ea18e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=400&fit=max&s=8208cfcbcf9b89123e2ff4940deac67e',
-          category: 'study',
-          id: 'H8s0PF2rcQs',
-          title: '学习'
-        },
+        photoURL: 'https://pixabay.com/api/?key=2831718-1f9b7c1b490ec182487b38a60&lang=zh&image_type=photo&q=',
+        photo1: {},
+        photo2: {},
+        photo3: {},
+        photo4: {},
         videoImage: {
           url: VideoJpg,
           id: '#877249',
@@ -429,6 +410,47 @@
       Photo,
       Foot,
       Video
+    },
+    route: {
+      data () {
+        const that = this
+        $.get(this.photoURL + '美女', function (data) {
+          var obj = {}
+          var num = parseInt(Math.random() * data.hits.length)
+          obj.url = data.hits[num].webformatURL
+          obj.title = '世界各地的美女'
+          obj.id = data.hits[num].id
+          obj.category = '美女'
+          that.photo1 = obj
+        })
+        $.get(this.photoURL + '风景', function (data) {
+          var obj = {}
+          var num = parseInt(Math.random() * data.hits.length)
+          obj.url = data.hits[num].webformatURL
+          obj.title = '想看看那儿的风景'
+          obj.id = data.hits[num].id
+          obj.category = '风景'
+          that.photo2 = obj
+        })
+        $.get(this.photoURL + '动漫', function (data) {
+          var obj = {}
+          var num = parseInt(Math.random() * data.hits.length)
+          obj.url = data.hits[num].webformatURL
+          obj.title = '死宅必看'
+          obj.id = data.hits[num].id
+          obj.category = '动漫'
+          that.photo3 = obj
+        })
+        $.get(this.photoURL + '壁纸', function (data) {
+          var obj = {}
+          var num = parseInt(Math.random() * data.hits.length)
+          obj.url = data.hits[num].webformatURL
+          obj.title = '超美壁纸'
+          obj.id = data.hits[num].id
+          obj.category = '壁纸'
+          that.photo4 = obj
+        })
+      }
     },
     ready () {
       const that = this
